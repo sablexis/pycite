@@ -14,6 +14,9 @@ Author: Sabrina Sanfy
 Date: March 3, 2025
 """
 
+# Local imports
+from controller.pyciteController import citeController
+
 # Standard library imports
 import csv
 import os
@@ -46,9 +49,8 @@ dc.date.issued: need to get year only (dates are still a bit messy).
 
 """
 
-
-def parse_csv(filepath: str) -> pd.DataFrame:
-    """
+# def parse_csv(filepath: str) -> pd.DataFrame:
+"""
     Parse the CSV file into a pandas DataFrame.
     
     Args:
@@ -66,4 +68,13 @@ def parse_csv(filepath: str) -> pd.DataFrame:
     # Validate required columns are present
     # This is important because...
     
-    return data
+    # return data
+
+class Main:
+    @staticmethod
+    def main():
+        controller = citeController()
+        controller.run()
+
+if __name__ == "__main__":
+    Main.main()
