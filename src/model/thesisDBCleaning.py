@@ -14,6 +14,7 @@ Date: March 18, 2025
 
 # local imports
 from getFile import CSVFile
+from view.userView import View
 
 # Third-party imports
 import pandas as pd
@@ -43,5 +44,28 @@ dc.date.issued: need to get year only (dates are still a bit messy).
 
 
 
-def cleanThesesData(thesesCSV):
-    print(thesesCSV)
+def cleanThesesData(filepath):
+    # Create a CSVFile instance with the provided filepath
+    thesesCSV = CSVFile(filepath)
+
+    # load the CSV file into pandas df
+    thesesCSV_df = thesesCSV.load_csv()
+
+    if thesesCSV_df is None:
+        print("Error: Failed to load the CSV file.")
+        return None
+    
+    # Print the original data for debugging
+    print("Original data:")
+    print(thesesCSV_df.head())
+    
+    # TODO: Implement data cleaning logic here
+    # For example:
+    # - Extract year from dc.date.issued
+    # - Format author names
+    # - Clean up titles
+
+   
+
+
+    return thesesCSV_df

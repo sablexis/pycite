@@ -48,10 +48,10 @@ def clean_theses_data(theses_df):
 
     # lets get the strings from these cols
     for i, name in cleanedThesisCSV[['dc.contributor.author']].iterrows():
-        print(name["dc.contributor.author"]) 
+        #print(name["dc.contributor.author"]) 
 
-    # split at the comma
-    nameParts = name.str.split(', ')
+        # split at the comma
+        nameParts = name.str.split(', ')
 
     cleanedThesisCSV[['dc.contributor.author.last', 'dc.contributor.author.first']] = cleanedThesisCSV['dc.contributor.author'].str.split(',', expand=True)
 
@@ -67,8 +67,6 @@ def clean_theses_data(theses_df):
     # created the initals column and get that firstNames data in there
     cleanedThesisCSV['dc.contributor.author.first.inital'] = firstNames.str[0]
 
-    print(cleanedThesisCSV['dc.contributor.author.first.inital'])
-
 
     """
     .+:  matches one or more of any character (except newline characters)
@@ -80,7 +78,6 @@ def clean_theses_data(theses_df):
     # since our firstNames column is already striped for us, we'll use it again
     cleanedThesisCSV['dc.contributor.author.middle.inital'] = firstNames.str.extract(regex)
 
-    print(cleanedThesisCSV['dc.contributor.author.middle.inital'])
 
     # now we can update our first names to just the first name, no initals
 
