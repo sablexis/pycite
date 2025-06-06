@@ -23,6 +23,8 @@ from model.getFile import CSVFile
 
 from view.userView import View
 
+from model.cleaningNames import clean_theses_data
+
 class citeController:
     def __init__(self, filepath):
         self.model = CSVFile(filepath)
@@ -42,4 +44,12 @@ class citeController:
         # file_path = self.view.get_file_input()
         #result = self.model.load_csv(self.filepath)
 
-        
+        theses_df = self.model.load_csv()
+
+        if theses_df is not None:
+            cleaned_df = clean_theses_data(theses_df)
+            self.view.show_message("Cleaned Data")
+            
+
+        else:
+            self.view.show_message("Failed to load the CSV file.")

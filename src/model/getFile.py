@@ -27,6 +27,7 @@ class CSVFile:
 
         """
         self.filepath = filepath
+        self.data = None
 
     def load_csv(self):
         """
@@ -42,9 +43,10 @@ class CSVFile:
             FileNotFound
         """
         try: 
-            thesesCSV = pd.read_csv(self.filepath)
-            return thesesCSV
+            self.data = pd.read_csv(self.filepath)
+            return self.data
         except Exception as e:
-                return f"Error loading CSV: {e}"
+            error_msg = f"Error loading CSV: {e}"
+            return None
         
     
