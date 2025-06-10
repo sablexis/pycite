@@ -38,3 +38,30 @@ class View:
     def get_file_input():
         print("Left click and copy your .csv file to easily get the filepath! \n")
         return input("Select a CSV file to upload: ")
+    
+
+    
+    """
+    Prompt user to choose which citation they'd like to create
+    
+        
+    Returns:
+        input: ask for choice of citation
+        
+    """
+    @property
+    def chooseCitation(self):
+        return input("Enter your choice: ").strip()
+    
+    def citationOptions():
+        print("What sort of citation would you like to create?: ")
+        print()
+        print("(1) MLA Citation \n")
+        print("(2) APA Citation \n")
+        print("(3) Chicago Citation \n")
+        print("(4) All Citations \n")
+
+
+
+
+

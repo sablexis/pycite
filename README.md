@@ -12,5 +12,10 @@ As of right now, our citation machine only creates APA citations but, we'll look
 
 <br>
 
+## TO-DO
+- [ ] review documentation && clean up 
+
+<br>
+
 ---
 Made with 💛 by Sabrina Sandy
