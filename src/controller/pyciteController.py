@@ -25,6 +25,8 @@ from view.userView import View
 
 from model.cleaningNames import clean_theses_data
 
+from model.makeMLACitation import make_MLA_citation
+
 class citeController:
     def __init__(self, filepath):
         self.model = CSVFile(filepath)
@@ -49,6 +51,9 @@ class citeController:
         if theses_df is not None:
             cleaned_df = clean_theses_data(theses_df)
             self.view.show_message("Cleaned Data")
+            mla = make_MLA_citation(theses_df)
+            self.view.show_message("Made MLA citations")
+
             
 
         else:
