@@ -18,6 +18,7 @@ Date: March 3, 2025
 from controller.pyciteController import citeController
 from view.userView import View
 
+
 # Standard library imports
 import csv
 import os
@@ -56,9 +57,12 @@ class Main:
     def main(filepath):
         controller = citeController(filepath)
         controller.run()
+        
 
 if __name__ == "__main__":
     filepath = View.get_file_input()
+    displayMenu = View.citationOptions()
+    citationChoice = View.chooseCitation
     
 
     Main.main(filepath)
