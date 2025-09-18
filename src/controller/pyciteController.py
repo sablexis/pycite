@@ -29,6 +29,7 @@ from model.cleaningNames import clean_theses_data
 # citation style functions
 from model.makeMLACitation import make_MLA_citation
 from model.makeAPACitation import make_APA_citation
+from model.makeChicagoCitation import make_Chicago_Citation
 
 
 class citeController:
@@ -66,11 +67,15 @@ class citeController:
                     apa = make_APA_citation(cleaned_df)
                     self.view.show_message("Made APA citations")
             elif usrCitationChoice == "3":
+                    chi = make_Chicago_Citation(cleaned_df)
+                    self.view.show_message("Made Chicago citations")
+            elif usrCitationChoice == "4":
                     mla = make_MLA_citation(cleaned_df)
                     self.view.show_message("Made MLA citations")
                     apa = make_APA_citation(cleaned_df)
                     self.view.show_message("Made APA citations")
-            
+                    chi = make_Chicago_Citation(cleaned_df)
+                    self.view.show_message("Made Chicago citations")
         else:
             self.view.show_message("Failed to load the CSV file.")
             
