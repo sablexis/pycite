@@ -23,6 +23,7 @@ from view.userView import View
 import csv
 import os
 import argparse
+import sys
 from typing import List, Dict
 
 # Third-party imports
@@ -60,9 +61,14 @@ class Main:
         
 
 if __name__ == "__main__":
+    
     filepath = View.get_file_input()
-    displayMenu = View.citationOptions()
-    citationChoice = View.chooseCitation
+    View.citationOptions()
+    view = View()
+    usrCitationChoice = view.chooseCitation
+
+    controller = citeController(filepath)
+    controller.run(usrCitationChoice)
     
 
-    Main.main(filepath)
+    # Main.main(filepath)

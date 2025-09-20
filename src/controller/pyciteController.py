@@ -38,7 +38,7 @@ class citeController:
         self.view = View()
 
 
-    def run(self):
+    def run(self, usrCitationChoice):
         """
         control the flow of pycite program
         
@@ -48,12 +48,12 @@ class citeController:
         """
         # self.view.show_message("Please paste the filepath of your csv file! ")
 
-        # file_path = self.view.get_file_input()
+        #file_path = self.view.get_file_input()
         #result = self.model.load_csv(self.filepath)
 
         theses_df = self.model.load_csv()
-        usrCitationChoice = ""
-        usrCitationChoice = self.view.chooseCitation
+        #usrCitationChoice = ""
+        #usrCitationChoice = self.view.chooseCitation
 
         if theses_df is not None:
             cleaned_df = clean_theses_data(theses_df)
@@ -76,6 +76,8 @@ class citeController:
                     self.view.show_message("Made APA citations")
                     chi = make_Chicago_Citation(cleaned_df)
                     self.view.show_message("Made Chicago citations")
+                    
+            
         else:
             self.view.show_message("Failed to load the CSV file.")
             
