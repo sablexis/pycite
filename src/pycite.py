@@ -59,14 +59,17 @@ import pandas as pd
 class Main:
     @staticmethod
     def main(filepath):
-        controller = citeController(filepath)
-        controller.run(usrCitationChoice)
-        root = tk.Tk()
-        root.title("Pycite Main")
-        root.mainloop
+        pass
+        #controller.run(usrCitationChoice)
+        
 
 if __name__ == "__main__":
-    
+    root = tk.Tk()
+    root.title("Pycite Main")
+    controller = citeController(root)
+
+    root.mainloop()
+    """
     filepath = View.get_file_input()
     View.citationOptions()
     view = View()
@@ -74,6 +77,8 @@ if __name__ == "__main__":
 
     controller = citeController(filepath)
     controller.run(usrCitationChoice)
+    """
+    
     
 
-    Main.main(filepath)
+   # Main.main(filepath)
