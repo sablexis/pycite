@@ -57,7 +57,7 @@ class Main:
     @staticmethod
     def main(filepath):
         controller = citeController(filepath)
-        controller.run()
+        controller.run(usrCitationChoice)
         
 
 if __name__ == "__main__":
@@ -71,4 +71,4 @@ if __name__ == "__main__":
     controller.run(usrCitationChoice)
     
 
-    # Main.main(filepath)
+    Main.main(filepath)
