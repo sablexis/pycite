@@ -11,6 +11,8 @@ Date: March 7, 2025
 import os
 import errno
 
+
+
 class View:
 
     """
@@ -37,7 +39,12 @@ class View:
     @staticmethod
     def get_file_input():
         print("Left click and copy your .csv file to easily get the filepath! \n")
-        return input("Select a CSV file to upload: ")
+        filepath = input("Select a CSV file to upload: ")
+
+        filepath = filepath.replace('\\', '/')  # Replace backslashes with forward slashes
+        filepath = filepath.strip()  # Remove any extra spaces
+        filepath = filepath.strip('"')
+        return filepath
     
 
     

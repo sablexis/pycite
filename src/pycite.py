@@ -17,13 +17,17 @@ Date: March 3, 2025
 # Local imports
 from controller.pyciteController import citeController
 from view.userView import View
+from view.guiView import GUIView
 
 
 # Standard library imports
 import csv
 import os
 import argparse
+import sys
+import tkinter as tk
 from typing import List, Dict
+ 
 
 # Third-party imports
 import pandas as pd
@@ -55,14 +59,26 @@ import pandas as pd
 class Main:
     @staticmethod
     def main(filepath):
-        controller = citeController(filepath)
-        controller.run()
+        pass
+        #controller.run(usrCitationChoice)
         
 
 if __name__ == "__main__":
+    root = tk.Tk()
+    root.title("Pycite Main")
+    controller = citeController(root)
+
+    root.mainloop()
+    """
     filepath = View.get_file_input()
-    displayMenu = View.citationOptions()
-    citationChoice = View.chooseCitation
+    View.citationOptions()
+    view = View()
+    usrCitationChoice = view.chooseCitation
+
+    controller = citeController(filepath)
+    controller.run(usrCitationChoice)
+    """
+    
     
 
-    Main.main(filepath)
+   # Main.main(filepath)
