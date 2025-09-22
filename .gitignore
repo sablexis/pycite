@@ -24,4 +24,5 @@ TestResults.xml
 source data/Undergraduate Theses Mar 3 2025.csv
 # DS_Store
 source data/.DS_Store
-
+# .pyc files bc it may cause issues
+*.pyc
