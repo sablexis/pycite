@@ -14,6 +14,9 @@ Date: March 11, 2025
 # Standard Library Imports
 import sys
 # sys.path.append('../model')
+import tkinter as tk
+from tkinter import *
+
 
 # 3rd Party Imports
 import pandas as pd
@@ -23,8 +26,10 @@ from model.getFile import CSVFile
 
 from view.userView import View
 
+from view.guiView import GUIView
 
 from model.cleaningNames import clean_theses_data
+
 
 # citation style functions
 from model.makeMLACitation import make_MLA_citation
@@ -33,10 +38,19 @@ from model.makeChicagoCitation import make_Chicago_Citation
 
 
 class citeController:
-    def __init__(self, filepath):
-        self.model = CSVFile(filepath)
-        self.view = View()
 
+    def __init__(self, root, filepath=None):
+        self.root = root
+        self.model = CSVFile(filepath) if filepath else None
+        self.view = View()
+        self.gui = GUIView(self.root, import_func=self.import_file, run_func=self.run)
+
+
+    def import_file(self, csv_path: str):
+         if hasattr(csv_path, "name"):
+              csv_path = csv_path.name
+         self.model = CSVFile(csv_path)
+         print(csv_path)
 
     def run(self, usrCitationChoice):
         """
