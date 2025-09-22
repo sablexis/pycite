@@ -45,21 +45,21 @@ class GUIView:
         btm_frame.pack(side=BOTTOM)
 
         # citation btns
-        radio_var = tk.StringVar()
-        radioMLA = ttk.Radiobutton(btm_frame, text='MLA Citation', value = 1, variable= radio_var)
+        self.radio_var = tk.StringVar()
+        radioMLA = ttk.Radiobutton(btm_frame, text='MLA Citation', value = 1, variable= self.radio_var)
         radioMLA.grid(column=1, row=1)
 
 
 
-        radioAPA = ttk.Radiobutton(btm_frame, text='APA Citation', value = 2, variable= radio_var)
+        radioAPA = ttk.Radiobutton(btm_frame, text='APA Citation', value = 2, variable= self.radio_var)
         radioAPA.grid(column=2, row=1)
 
 
-        radioCHI = ttk.Radiobutton(btm_frame, text='Chicago Citation', value = 3, variable= radio_var)
+        radioCHI = ttk.Radiobutton(btm_frame, text='Chicago Citation', value = 3, variable= self.radio_var)
         radioCHI.grid(column=3, row=1)
 
 
-        radioALL = ttk.Radiobutton(btm_frame, text='All Styles', value = 4, variable= radio_var)
+        radioALL = ttk.Radiobutton(btm_frame, text='All Styles', value = 4, variable= self.radio_var)
         radioALL.grid(column=4, row=1)
 
 
@@ -76,6 +76,7 @@ class GUIView:
 
     def gen_cite(self):
         cite_opt = self.radio_var.get()
+        print(cite_opt)
         self.run_func(cite_opt)
 
 

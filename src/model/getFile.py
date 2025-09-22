@@ -16,7 +16,7 @@ import pandas as pd
 
 class CSVFile:
 
-    def __init__(self, filepath):
+    def __init__(self, csv_path):
         """
         Initialize an instance of this fileModel class to access instance vars & methods of fileModel
         so we can access the data provided by the uploaded CSV 
@@ -26,7 +26,7 @@ class CSVFile:
             filepath: location of csv object to be loaded into pd
 
         """
-        self.filepath = filepath
+        self.filepath = csv_path
         self.data = None
 
     def load_csv(self):
