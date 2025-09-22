@@ -64,8 +64,8 @@ Hostetler, Tara. "Bodies at War: Bacteriology and the Carrier Narratives of ‘T
             f"{row['dc.date.issued']}), pp-pp."
             f"\n"
             f"\n"
-            f"{'dc.contributor.author.last'}, "
-            f"{'dc.contributor.author'}. "
+            f"{row['dc.contributor.author.last']}, "
+            f"{row['dc.contributor.author']}. "
             f''' "{row['dc.title']}" '''
             f"(Undergraduate Thesis, Mount Allision University, "
             f"{row['dc.date.issued']})."
