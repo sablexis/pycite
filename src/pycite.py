@@ -17,6 +17,7 @@ Date: March 3, 2025
 # Local imports
 from controller.pyciteController import citeController
 from view.userView import View
+from view.guiView import GUIView
 
 
 # Standard library imports
@@ -24,7 +25,9 @@ import csv
 import os
 import argparse
 import sys
+import tkinter as tk
 from typing import List, Dict
+ 
 
 # Third-party imports
 import pandas as pd
@@ -58,7 +61,9 @@ class Main:
     def main(filepath):
         controller = citeController(filepath)
         controller.run(usrCitationChoice)
-        
+        root = tk.Tk()
+        root.title("Pycite Main")
+        root.mainloop
 
 if __name__ == "__main__":
     
